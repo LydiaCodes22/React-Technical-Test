@@ -1,4 +1,8 @@
 #nasaLogo {
-  max-width: 75%;
+  width: 50%;
+  max-width: 500px;
   height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }

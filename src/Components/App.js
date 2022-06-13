@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/app.css";
-import Search from "./Search"
-import logo from "../Images/logo.jpeg"
+import Search from "./Search";
+import ImageResults from "./ImagesResults";
+import getImages from "../Functions/getImages";
+// import cors from "cors";
+
 
 const App = () => {
-  return (
+
+const [images, setImages] = useState([]);
+
+
+return (
     <div className="app">
-      <img src={logo} alt="nasa logo" id="nasaLogo"/>
-      <Search />
+      <img src={"https://cdn.cnn.com/cnnnext/dam/assets/200424060716-nasa-worm-logo.jpg"} alt="nasa logo" id="nasaLogo"/>
+      <Search  getImages={getImages} setImages={setImages} />
+      {images && <ImageResults images={images}/>}
     </div>
   );
 }
